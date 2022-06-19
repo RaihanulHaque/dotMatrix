@@ -10,7 +10,7 @@ color = (0,255,0)
 while True:
     _, img = cap.read()
     bboxs = detector.findFaces(img)
-    predection = classifier.getPrediction(img)
+    # predection = classifier.getPrediction(img)
     if bboxs:
         print( True)
     else:
@@ -21,6 +21,6 @@ while True:
     print(predection[0]*100)
     print(accuracy)
     cv2.imshow("Image", img)
-    time.sleep(0)
+    time.sleep(0.1)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
